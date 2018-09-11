@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>School System</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body>
+
+	<script type="text/javascript">
+		var x, y;
+		var questao = [1, " "];
+		var item1 = " ";
+		var item2 = " ";
+		var item3 = " ";
+		var item4 = " ";
+		var item5 = " ";
+		var texto = " ";
+		var nomeQuestao = " ";
+
+		function apareceEscolha3(){
+			document.getElementById('choice3').style.display = "none";
+			document.getElementById('choiceq3').style.display = "none";
+			document.getElementById('choicei31').style.display = "none";
+			document.getElementById('choicei32').style.display = "none";
+			document.getElementById('choicei33').style.display = "none";
+
+			document.getElementById('choice2').style.display = "block";
+			setTimeout(apareceTextoEscolha3, 3000);
+		}
+
+		function apareceTextoEscolha3(){
+			document.getElementById('choiceq2').style.display = "block";
+			document.getElementById('choicei21').style.display = "block";
+			document.getElementById('choicei22').style.display = "block";
+			document.getElementById('choicei23').style.display = "block";
+			document.getElementById('choicei24').style.display = "block";
+		}
+
+		function apareceEscolha2(){
+			document.getElementById('choice').style.display = "none";
+			document.getElementById('choiceq').style.display = "none";
+			document.getElementById('choicei1').style.display = "none";
+			document.getElementById('choicei2').style.display = "none";
+
+			document.getElementById('choice3').style.display = "block";
+			setTimeout(apareceTextoEscolha2, 3000);
+		}
+
+		function apareceTextoEscolha2(){
+			document.getElementById('choiceq3').style.display = "block";
+			document.getElementById('choicei31').style.display = "block";
+			document.getElementById('choicei32').style.display = "block";
+			document.getElementById('choicei33').style.display = "block";
+		}
+
+		function apareceQuest(){
+			document.getElementById("choice2").style.display = "none";
+			document.getElementById("choiceq2").style.display = "none";
+			document.getElementById('choicei21').style.display = "none";
+			document.getElementById('choicei22').style.display = "none";
+			document.getElementById('choicei23').style.display = "none";
+			document.getElementById('choicei24').style.display = "none";
+			document.getElementById('questionario1').style.display = "block";
+		}
+
+		function apareceEscolha(){
+			document.getElementById('choice').style.display = "block";
+			setTimeout(apareceTextoEscolha, 3000);
+		}
+
+		function apareceTextoEscolha(){
+			document.getElementById('choiceq').style.display = "block";
+			document.getElementById('choicei1').style.display = "block";
+			document.getElementById('choicei2').style.display = "block";
+		}
+
+		function salvarForm(){
+			nomeQuestao = prompt("Digite o nome desse questionário:");
+			alert("Questionário salvo com sucesso!");
+			document.getElementById('quest').style.display = "block";
+			document.getElementById('quest').innerHTML = nomeQuestao;
+
+			document.getElementById("qSave").style.display = "none";
+			document.getElementById("qText").style.display = "none";
+			document.getElementById("qsel1").style.display = "none";
+			document.getElementById("qsel2").style.display = "none";
+			document.getElementById("ibtn").style.display = "none";
+			document.getElementById("qn").style.display = "none";
+		}
+
+		function apareceConteudo2(){
+			document.getElementById('conteudo2').style.display = "block";
+		}
+
+		function cadastrarTurma(){
+			var turma = prompt('Digite o nome da turma');
+			document.getElementById('disc4').innerHTML = turma;
+		}
+
+		function apareceQuestForm(){
+			questao[0] = 1;
+			document.getElementById("choice").style.display = "none";
+			document.getElementById("choiceq").style.display = "none";
+			document.getElementById("choicei1").style.display = "none";
+			document.getElementById("choicei2").style.display = "none";
+
+			document.getElementById("qn").innerHTML = questao[0];
+			document.getElementById("qSave").style.display = "block";
+			document.getElementById("qText").style.display = "block";
+			document.getElementById("qsel1").style.display = "block";
+			document.getElementById("qsel2").style.display = "block";
+			document.getElementById("ibtn").style.display = "block";
+			questao[1] = ++questao[0];
+		}
+
+		function apareceConteudo(){
+			document.getElementById('conteudo1').style.display = "block";
+			document.getElementById('disc2').style.top = 150+"px";
+			document.getElementById('disc3').style.top = 180+"px";
+			document.getElementById('disc4').style.top = 210+"px";
+		}
+
+		function desapareceConteudo(){
+			document.getElementById('conteudo1').style.display = "none";
+			document.getElementById('disc2').style.top = 60+"px";
+			document.getElementById('disc3').style.top = 90+"px";
+			document.getElementById('disc4').style.top = 120+"px";
+		}
+
+		function desapareceConteudo2(){
+			document.getElementById('conteudo2').style.display = "none";
+		}
+
+		function validacao(){
+			document.getElementById('ibtn').style.display = "none";
+			x = document.getElementById('qsel1').value;
+			y = document.getElementById('qsel2').value;
+			document.getElementById('qsel1').style.display = "none";
+			document.getElementById('qsel2').style.display = "none";
+			apareceItens();
+		}
+
+		function salvarPergunta(){
+			texto = document.getElementById('qText').value;
+
+			item1 = document.getElementById('iText1').value;
+			item2 = document.getElementById('iText2').value;
+			item3 = document.getElementById('iText3').value;
+			item4 = document.getElementById('iText4').value;
+			item5 = document.getElementById('iText5').value;
+
+			document.getElementById('iText1').style.display = "none";
+			document.getElementById('iText2').style.display = "none";
+			document.getElementById('iText3').style.display = "none";
+			document.getElementById('iText4').style.display = "none";
+			document.getElementById('iText5').style.display = "none";
+			document.getElementById('qText').style.display = "none";
+
+			document.getElementById('questionText').innerHTML = texto;
+			document.getElementById('item1').innerHTML = item1;
+			document.getElementById('item2').innerHTML = item2;
+			document.getElementById('item3').innerHTML = item3;
+			document.getElementById('item4').innerHTML = item4;
+			document.getElementById('item5').innerHTML = item5;
+
+			document.getElementById('questionText').style.display = "block";
+			document.getElementById('item1').style.display = "block";
+			document.getElementById('item2').style.display = "block";
+			document.getElementById('item3').style.display = "block";
+			document.getElementById('item4').style.display = "block";
+			document.getElementById('item5').style.display = "block";
+
+			document.getElementById('item2').style.left = 42+"%";
+			document.getElementById('item3').style.left = 42+"%";
+			document.getElementById('item4').style.left = 42+"%";
+			document.getElementById('item5').style.left = 42+"%";
+
+			document.getElementById('qbtn').style.display = "none";
+
+			document.getElementById('qText').style.top = 370+"px";
+			document.getElementById('qsel1').style.top = 470+"px";
+			document.getElementById('qsel2').style.top = 470+"px";
+			document.getElementById('ibtn').style.top = 470+"px";
+
+			document.getElementById('qText').style.display = "block";
+			document.getElementById('qsel1').style.display = "block";
+			document.getElementById('qsel2').style.display = "block";
+			document.getElementById('ibtn').style.display = "block";
+
+			document.getElementById('qn2').innerHTML = questao[1];
+		}
+
+		function apareceItens(){
+			if(y == 4){
+				if(x == 1){
+					document.getElementById('qi1').style.display = "block";
+					document.getElementById('qi2').style.display = "block";
+					document.getElementById('qi3').style.display = "block";
+
+					document.getElementById('iText1').style.display = "block";
+					document.getElementById('iText2').style.display = "block";
+					document.getElementById('iText3').style.display = "block";
+				}
+
+				if(x == 2){
+					document.getElementById('qi1').style.display = "block";
+					document.getElementById('qi2').style.display = "block";
+					document.getElementById('qi3').style.display = "block";
+					document.getElementById('qi4').style.display = "block";
+
+					document.getElementById('iText1').style.display = "block";
+					document.getElementById('iText2').style.display = "block";
+					document.getElementById('iText3').style.display = "block";
+					document.getElementById('iText4').style.display = "block";
+				}
+
+				if(x == 3){
+					document.getElementById('qi1').style.display = "block";
+					document.getElementById('qi2').style.display = "block";
+					document.getElementById('qi3').style.display = "block";
+					document.getElementById('qi4').style.display = "block";
+					document.getElementById('qi5').style.display = "block";
+
+					document.getElementById('iText1').style.display = "block";
+					document.getElementById('iText2').style.display = "block";
+					document.getElementById('iText3').style.display = "block";
+					document.getElementById('iText4').style.display = "block";
+					document.getElementById('iText5').style.display = "block";
+				}
+			} else if(y == 5){
+				if(x == 1){
+					document.getElementById('qic1').style.display = "block";
+					document.getElementById('qic2').style.display = "block";
+					document.getElementById('qic3').style.display = "block";
+
+					document.getElementById('iText1').style.display = "block";
+					document.getElementById('iText2').style.display = "block";
+					document.getElementById('iText3').style.display = "block";
+				}
+
+				if(x == 2){
+					document.getElementById('qic1').style.display = "block";
+					document.getElementById('qic2').style.display = "block";
+					document.getElementById('qic3').style.display = "block";
+					document.getElementById('qic4').style.display = "block";
+
+					document.getElementById('iText1').style.display = "block";
+					document.getElementById('iText2').style.display = "block";
+					document.getElementById('iText3').style.display = "block";
+					document.getElementById('iText4').style.display = "block";
+				}
+
+				if(x == 3){
+					document.getElementById('qic1').style.display = "block";
+					document.getElementById('qic2').style.display = "block";
+					document.getElementById('qic3').style.display = "block";
+					document.getElementById('qic4').style.display = "block";
+					document.getElementById('qic5').style.display = "block";
+
+					document.getElementById('iText1').style.display = "block";
+					document.getElementById('iText2').style.display = "block";
+					document.getElementById('iText3').style.display = "block";
+					document.getElementById('iText4').style.display = "block";
+					document.getElementById('iText5').style.display = "block";
+				}
+			}
+
+			document.getElementById("qbtn").style.display = "block";
+		}
+
+	</script>
+
+
+
+	<nav class="navbar navbar-dark bg-dark">
+		<img src="../img/barao.jpg" id="prof_img">
+
+		<a href="admin.html" id="prof_nome">José Antônio da Cunha</a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        	<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+               <li class="nav-item">
+                 <a class="nav-link" href="forum_prof.html">Fórum</a>
+               </li>
+
+               <li class="nav-item">
+                 <a class="nav-link" href="estatisticas_prof.html">Estatísticas</a>
+               </li>
+
+        	   <li class="nav-item">
+        		 <a class="nav-link" href="login.html">Sair</a>
+        	   </li>
+            </ul>
+        </div>
+	</nav>
+
+	<img src="../img/check.png" id="imagem">
+
+	<div id="tela">
+		<div id="divisor"></div>
+		<b id="disc1" onclick="apareceConteudo()" ondblclick="desapareceConteudo()">Banco de Dados</b>
+		<b id="disc2">Programação de Banco de Dados</b>
+		<b id="disc3">Administração de Banco de Dados</b>
+		<b id="disc4" onclick="apareceConteudo2()"></b>
+		<b id="addTurma" onclick="cadastrarTurma()" ondblclick="desapareceConteudo2()"><i>Adicionar turma</i></b>
+
+
+		<ul id="conteudo1">
+			<li>Relacionamento entre tabelas</li>
+			<li>Normalização</li>
+			<li>DDL</li>
+			<li id="quest"></li>
+			<li><b onclick="apareceEscolha()"><i>Adicionar Questionário</i></b></li>
+		</ul>
+
+		<ul id="conteudo2">
+			<li><b onclick="apareceEscolha()"><i>Adicionar Questionário</i></b></li>
+		</ul>
+
+		<div id="choice">
+			<p id="choiceq">Como você deseja criar a turma?</p>
+			<button id="choicei1" onclick="apareceQuestForm()">Manual</button>
+			<button id="choicei2" onclick="apareceEscolha2()">Automática</button>
+		</div>
+
+		<div id="choice2">
+			<p id="choiceq2">Quantas questões?</p>
+			<button id="choicei21" onclick="apareceQuest()">2</button>
+			<button id="choicei22" onclick="">3</button>
+			<button id="choicei23" onclick="">5</button>
+			<button id="choicei24" onclick="">10</button>
+		</div>
+
+		<div id="choice3">
+			<p id="choiceq3">Dificuldade</p>
+			<button id="choicei31" onclick="apareceEscolha3()">Fácil</button>
+			<button id="choicei32" onclick="">Intermediário</button>
+			<button id="choicei33" onclick="">Difícil</button>
+		</div>
+
+		<p id="qn"></p>
+		<textarea id="qText" cols="50" rows="3" placeholder="Digite a sua pergunta"></textarea>
+		<select id="qsel1">
+			<optgroup label="Quantidade">
+			  <option value="1">3 opções</option>
+			  <option value="2">4 opções</option>
+			  <option value="3">5 opções</option>
+		    </optgroup>
+		</select>
+
+		<select id="qsel2">
+			<optgroup label="Forma">
+			 <option value="4">Única escolha</option>
+			 <option value="5">Múltipla escolha</option>
+		    </optgroup>
+		</select>
+		<button id="ibtn" onclick="validacao()">Criar itens</button>
+		<button id="qbtn" onclick="salvarPergunta()">Gravar Pergunta</button>
+
+		<input type="radio" name="name" id="qi1">
+		<input type="radio" name="name" id="qi2">
+		<input type="radio" name="name" id="qi3">
+		<input type="radio" name="name" id="qi4">
+		<input type="radio" name="name" id="qi5">
+
+		<input type="checkbox" id="qic1">
+		<input type="checkbox" id="qic2">
+		<input type="checkbox" id="qic3">
+		<input type="checkbox" id="qic4">
+		<input type="checkbox" id="qic5">
+
+		<input type="text" id="iText1" size="20">
+		<input type="text" id="iText2" size="20">
+		<input type="text" id="iText3" size="20">
+		<input type="text" id="iText4" size="20">
+		<input type="text" id="iText5" size="20">
+
+		<b id="qSave" onclick="salvarForm()"><i>Salvar</i></b>
+
+		<p id="questionText"></p>
+		<p id="item1"></p>
+		<p id="item2"></p>
+		<p id="item3"></p>
+		<p id="item4"></p>
+		<p id="item5"></p>
+
+		<p id="qn2"></p>
+
+		<div id="questionario1">
+			<p id="q1_quest">1 - Problema de dependência funcional se resolve com?</p>
+			<input type="radio" name="q1" id="ch1_q1_quest"> <p id="i1_q1_quest">1ª Forma Normal.</p> 
+			<input type="radio" name="q1" id="ch2_q1_quest"> <p id="i2_q1_quest">2ª Forma Nomal.</p>
+			<input type="radio" name="q1" id="ch3_q1_quest"> <p id="i3_q1_quest">3ª Forma Normal.</p>
+			<input type="radio" name="q1" id="ch4_q1_quest"> <p id="i4_q1_quest">4ª Forma Normal.</p>
+
+			<p id="q2_quest">2 - Para criar um relacionamento 1 para 1, é necessário que:</p>
+			<input type="radio" name="q2" id="ch1_q2_quest"> <p id="i1_q2_quest">A chave primária de uma tabela seja a chave primária da outra tabela.</p>
+			<input type="radio" name="q2" id="ch2_q2_quest"> <p id="i2_q2_quest">A chave primária de uma tabela seja a chave extrangeira de outra tabela.</p>
+
+			<button onclick="salvarForm()" id="btn_quest_prof">Responder</button>
+	</div>
+</body>
+</html>

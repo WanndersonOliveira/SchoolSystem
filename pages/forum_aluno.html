@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>School System</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body>
+
+	<script>
+		var topico = "";
+
+		function apareceTopicos(){
+			document.getElementById('disc3').style.top = 180+"px";
+			document.getElementById('disc2').style.top = 160+"px";
+			document.getElementById('topicos').style.display = "block";
+		}
+
+		function desapareceTopicos(){
+			document.getElementById('topicos').style.display = "none";
+			document.getElementById('disc2').style.top = 60+"px";
+			document.getElementById('disc3').style.top = 90+"px";
+		}
+
+		function adicionarTopico(){
+			topico = prompt('Digite o nome do novo tópico:');
+			document.getElementById('top3').style.display = "block";
+			document.getElementById('top3').innerHTML = topico;
+		}
+
+		function apareceForum(){
+			document.getElementById('forum').style.display = "block";
+		}
+
+		function apareceForum2(){
+			document.getElementById('forum').style.display = "block";
+			document.getElementById('comment1').style.display = "none";
+			document.getElementById('comment2').style.display = "none";
+			document.getElementById('comment3').style.top = 150+"px";
+		}
+
+		function desapareceForum(){
+			document.getElementById('forum').style.display = "none";
+		}
+
+		function apareceResposta(){
+			resp = document.getElementById('comments').value;
+
+			document.getElementById('comment3').style.display = "block";
+			document.getElementById('resposta').innerHTML = resp;
+		}
+
+		function desapareceResposta(){
+			var re = confirm('Você quer apagar essa resposta?');
+			
+			if(re == true){
+				document.getElementById('comment3').style.display = "none";
+			}
+		}
+
+	</script>
+
+	<nav class="navbar navbar-dark bg-dark">
+		<img src="../img/aluno.jpeg" id="prof_img">
+
+		<a href="aluno.html" id="prof_nome">Wannderson Pereira da Silva</a>
+		<p></p>
+		<p></p>
+		<p></p>
+		<img src="../img/davidstar.png" height="40" width="40">
+		<p id="star_qtde">0</p>
+		<img src="../img/coin.png" height="40" width="40">
+		<p id="coin_qtde">10</p>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        	<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        	   <li class="nav-item">
+                 <a class="nav-link" href="forum_aluno.html">Fórum</a>
+               </li>
+
+               <li class="nav-item">
+                 <a class="nav-link" href="estatisticas_aluno.html">Estatísticas</a>
+               </li>
+
+        	   <li class="nav-item">
+        		 <a class="nav-link" href="login.html">Sair</a>
+        	   </li>
+            </ul>
+        </div>
+	</nav>
+
+	<img src="../img/forum.png" id="imagem">
+
+	<div id="aluno">
+		<div id="aluno_d"></div>
+		<b id="disc1"  onclick="apareceTopicos()" ondblclick="desapareceTopicos()">Redes</b>
+		<b id="disc2">Banco de Dados</b>
+		<b id="disc3">Algoritmos</b>
+		<b id="limpar" onclick="desapareceForum()">Limpar Tela</b>
+
+		<ul id="topicos">
+		  <li class="topics" id="top1" onclick="apareceForum()">O que é backbone?</li>
+		  <li class="topics" id="top2">Máscara parcial de IP</li>
+		  <li class="topics" id="top3" onclick="apareceForum2()"></li>
+		  <li class="topics" id="addTopico" onclick="adicionarTopico()"><i><b>Adicionar tópico</b></i></li>
+	    </ul>
+	</div>
+
+	<div id="forum">
+		<textarea id="comments" placeholder="Digite o seu comentário aqui" cols="60" rows="3"></textarea>
+		<button id="butao" onclick="apareceResposta()">Responder</button>
+
+		<div id="comment1">
+			<a href="">
+			<img src="../img/franklin.jpeg" class="img"></a>
+			<a href="" class="link">Franklin Tavares da Cruz</a>
+			<p class="paragrafo">O que é backbone?</p>
+		</div>
+
+		<div id="comment2">
+			<a href="">
+			<img src="../img/fernanda.jpeg" class="img"></a>
+			<a href="" class="link">Fernanda</a>
+			<p class="paragrafo">Ele explicou na aula de Cabeamento Estruturado, mas não entendi também.</p>
+		</div>
+
+		<div id="comment3">
+			<a href="">
+			<img src="../img/aluno.jpeg" class="img"></a>
+			<a href="aluno.html" class="link">Wannderson Pereira da Silva</a>
+			<p class="paragrafo" id="resposta">Minha resposta</p>
+			<img src="../img/close.png" id="close" onclick="desapareceResposta()"> 
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>School System</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	
+
+
+</head>
+<body>
+	<style type="text/css">
+		body{
+			background-color: #330033;
+		}
+
+		#logo{
+			position: absolute;
+			top: 150px;
+			left: 15%;
+		}
+
+		#desc{
+			position: absolute;
+			left: 35%;
+			top: 50px;
+			font-size: 1.8em;
+			font-family: Impact;
+		}
+
+		#desc_body{
+			position: absolute;
+			left: 50%;
+			top: 150px;
+			font-size: 1.5em;
+			font-family: monospace;
+		}
+
+		#firstPage{
+			position: absolute;
+			min-height: 570px;
+
+			background-attachment: scroll;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			width: 97%;
+			background-color: #66a3ff;
+		}
+
+		#secondPage{
+			position: absolute;
+			height: 650px;
+			background-color: #0066ff;
+			width: 97%;
+			top: 625px;
+		}
+
+		#thirdPage{
+			position: absolute;
+			height: 600px;
+			background-color: #4d94ff;
+			width: 97%;
+			top: 1250px;
+		}
+
+		#title_s, #subtitle_s, #title_t, #subtitle_t{
+			position: absolute;
+			top: 30px;
+			left: 40%;
+			font-size: 2em;
+			font-family: Impact;
+		}
+
+		#title_t{
+			left: 45%;
+		}
+
+		#subtitle_s, #subtitle_t{
+			top: 150px;
+			left: 25%;
+			font-size: 1.5em;
+			font-family: cursive;
+		}
+
+		#block1_s, #block2_s, #block1_t, #block2_t{
+			position: absolute;
+			top: 270px;
+			left: 20%;
+			height: 300px;
+			width: 250px;
+			background-color: blue;
+			border-style: default;
+			border-radius: 30%;
+		}
+
+		#block1_t, #block2_t{
+			height: 250px;
+		}
+
+		#img1_s, #img2_s, #img1_t, #img2_t{
+			position: absolute;
+			top: 20px;
+			left: 30%;
+			width: 100px;
+		}
+
+		#img1_t{
+			top: 30px;
+		}
+
+		#p1_s, #p1_1_s, #p2_s, #p2_1_s, #p2_2_s, #p1_t, #p2_t{
+			position: absolute;
+			top: 180px;
+			left: 10%;
+			color: white;
+			font-family: monospace;
+			font-size: 1.4em;
+		}
+
+		#p1_t{
+			top: 200px;
+			left: 25%;
+		}
+
+		#p1_1_s{
+			top: 215px;
+			left: 20%;
+		}
+
+		#p2_s, #p2_1_s, #p2_2_s{
+			left: 20%;
+		}
+
+		#p2_1_s{
+			top: 210px;
+			left: 30%;
+		}
+
+		#p2_2_s{
+			top: 240px;
+			left: 30%;
+		}
+
+		#img2_s{
+			left: 25%;
+			top: 50px;
+			width: 120px;
+		}
+
+		#block2_s, #block2_t{
+			left: 60%;
+		}
+
+		#img2_t{
+			width: 120px;
+			left: 28%;
+			top: 30px;
+		}
+
+		#p2_t{
+			left: 35%;
+			top: 200px;
+		}
+
+	</style>
+
+	<div class="container-fluid">
+		<nav class="navbar navbar-dark bg-dark">
+			<a class="navbar-brand" href="index.html">
+    			<img src="img/cross.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+    			School System
+  			</a>
+
+  			<ul class="nav">
+  				<li class="nav-item">
+    				<a class="nav-link" href="pages/login.html" style="color:white; font-weight: bold;">Login</a>
+  				</li>
+  			</ul>
+		</nav>
+
+		<div id="firstPage">
+			<img src="img/cross.jpg" width="200" height="200" id="logo">
+			<p id="desc">School System é</p>
+
+			<ul id="desc_body">
+				<li>a solução para os problemas dos professores e alunos!</li>
+				<li>a forma mais fácil e rápida de criar questões para seus alunos.</li>
+				<li>a forma mais divertida de aprender.</li>
+			</ul>
+		</div>
+
+		<div id="secondPage">
+			<p id="title_s">Professor</p>
+			<p id="subtitle_s">Não perca tempo fazendo listas de exercícios</p>
+			<div id="block1_s">
+				<img src="img/checklist.png" id="img1_s">
+				<p id="p1_s">Questionários gerados</p>
+				<p id="p1_1_s">automaticamente</p>
+			</div>
+
+			<div id="block2_s">
+				<img src="img/statistics.jpg" id="img2_s">
+				<p id="p2_s">Estatísticas de</p>
+				<p id="p2_1_s">rendimento</p>
+				<p id="p2_2_s">dos alunos</p>
+			</div>
+		</div>
+
+		<div id="thirdPage">
+			<p id="title_t">Aluno</p>
+			<p id="subtitle_t">Essa é a forma mais divertida de estudar!</p>
+
+			<div id="block1_t">
+				<img src="img/mario.png" id="img1_t">
+				<p id="p1_t">Gamificação</p>
+			</div>
+
+			<div id="block2_t">
+				<img src="img/estrela.png" id="img2_t">
+				<p id="p2_t">Ranking</p>
+			</div>
+
+
+		</div>
+
+	</div>
+
+
+</body>
+</html>

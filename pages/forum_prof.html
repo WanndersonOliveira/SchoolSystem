@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>School System</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+
+<body>
+
+	<script type="text/javascript">
+		var resp = "";
+
+		function apareceTopicos(){
+			document.getElementById('disc3').style.top = 140+"px";
+			document.getElementById('disc2').style.top = 120+"px";
+			document.getElementById('topicos').style.display = "block";
+		}
+
+		function desapareceTopicos(){
+			document.getElementById('topicos').style.display = "none";
+			document.getElementById('disc2').style.top = 60+"px";
+			document.getElementById('disc3').style.top = 90+"px";
+		}
+
+		function apareceResposta(){
+			resp = document.getElementById('comments').value;
+
+			document.getElementById('comment3').style.display = "block";
+			document.getElementById('resposta').innerHTML = resp;
+		}
+
+		function desapareceResposta(){
+			var re = confirm('Você quer apagar essa resposta?');
+			
+			if(re == true){
+				document.getElementById('comment3').style.display = "none";
+			}
+		}
+
+
+		function apareceForum(){
+			document.getElementById('forum').style.display = "block";
+		}
+
+		function desapareceForum(){
+			document.getElementById('forum').style.display = "none";
+		}
+
+	</script>
+
+	<nav class="navbar navbar-dark bg-dark">
+		<img src="../img/barao.jpg" id="prof_img">
+
+		<a href="admin.html" id="prof_nome">José Antônio da Cunha</a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        	<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+               <li class="nav-item">
+                 <a class="nav-link" href="forum_prof.html">Fórum</a>
+               </li>
+
+               <li class="nav-item">
+                 <a class="nav-link" href="estatisticas_prof.html">Estatísticas</a>
+               </li>
+
+        	   <li class="nav-item">
+        		 <a class="nav-link" href="login.html">Sair</a>
+        	   </li>
+            </ul>
+        </div>
+	</nav>
+
+	<img src="../img/forum.png" id="imagem">
+
+	<div id="aluno">
+		<div id="aluno_d"></div>
+		<b id="disc1" onclick="apareceTopicos()" ondblclick="desapareceTopicos()">Banco de Dados</b>
+		<b id="disc2">Programação de Banco de Dados</b>
+		<b id="disc3">Administração de Banco de Dados</b>
+		<b id="limpar" onclick="desapareceForum()">Limpar Tela</b>
+
+		<ul id="topicos">
+		  <li class="topics" id="top1" onclick="apareceForum()">Dúvida em normalização</li>
+		  <li class="topics" id="top2">Relacionamento 1:N</li>
+	    </ul>
+	</div>
+
+	<div id="forum">
+		<textarea id="comments" placeholder="Digite o seu comentário aqui" cols="60" rows="3"></textarea>
+		<button id="butao" onclick="apareceResposta()">Responder</button>
+
+		<div id="comment1">
+			<a href="">
+			<img src="../img/aluno.jpeg" class="img"></a>
+			<a href="" class="link">Wannderson Pereira da Silva</a>
+			<p class="paragrafo">Professor, me explique como eliminar as dependências funcionais. É resolvido com a 1 ou 2 Forma Normal?</p>
+		</div>
+
+		<div id="comment2">
+			<a href="">
+			<img src="../img/paulo.jpeg" class="img"></a>
+			<a href="" class="link">Paulo César</a>
+			<p class="paragrafo">Ele passou um livro em pdf muito bom que explica isso. Vou procurar aqui e disponibilizo o link.</p>
+		</div>
+
+		<div id="comment3">
+			<a href="">
+			<img src="../img/barao.jpg" class="img"></a>
+			<a href="" class="link">José Antônio da Cunha</a>
+			<p class="paragrafo" id="resposta">Minha resposta</p>
+			<img src="../img/close.png" id="close" onclick="desapareceResposta()"> 
+		</div>
+	</div>
+
+
+</body>
+</html>
